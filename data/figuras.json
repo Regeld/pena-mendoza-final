@@ -2,25 +2,25 @@
     {
         "id": 201,
         "name": "FIGURA DE ACCIÓN KANEKI - TOKYO GHOUL",
-        "price": 50.00,
+        "price": 90.00,
         "image": "images/figuras/kaneki_ghoul.jpg"
     },
     {
         "id": 202,
         "name": "FIGURA DE ACCIÓN BAKUGO - MHA",
-        "price": 50.00,
+        "price": 100.00,
         "image": "images/figuras/bakugo_mha.jpg"
     },
     {
         "id": 203,
         "name": "FIGURA DE ACCIÓN HATSUNE MIKU",
-        "price": 50.00,
+        "price": 90.00,
         "image": "images/figuras/miku_vocaloid.jpg"
     },
     {
         "id": 204,
         "name": "FIGURA DE ACCIÓN DENJI - CHAINSAWMAN",
-        "price": 50.00,
+        "price": 150.00,
         "image": "images/figuras/denji_chainsaw.jpg"
     }
 ]

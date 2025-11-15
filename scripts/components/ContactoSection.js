@@ -29,7 +29,7 @@ function ContactoSection() {
         e.preventDefault();
         
         // 🚨 CONFIGURA LA URL REAL DE TU SERVIDOR AQUÍ 🚨
-        const SERVER_ENDPOINT = 'https://tudominio.com/api/submit-contact'; 
+        const MAKE_WEBHOOK_URL = 'https://hook.us2.make.com/no7denokedvmq2ybkvlh96olt2ia6rwf';
 
         // Los entry.XXXXX en un proyecto real deben coincidir con tu Google Form
         const dataToSend = new URLSearchParams({

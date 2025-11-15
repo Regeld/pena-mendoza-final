@@ -2,13 +2,13 @@
     {
         "id": 401,
         "name": "LLAVERO - SAILOR MOON",
-        "price": 50.00,
+        "price": 30.00,
         "image": "images/accesorios/llavero_sailor.jpg"
     },
     {
         "id": 402,
         "name": "ESPADA DE RENGO KU - KIMETSU NO YAIBA",
-        "price": 50.00,
+        "price": 100.00,
         "image": "images/accesorios/espada_rengoku.jpg"
     },
     {
@@ -20,7 +20,7 @@
     {
         "id": 404,
         "name": "ANILLO GOKU BLACK DE ACERO INOXIDABLE",
-        "price": 50.00,
+        "price": 40.00,
         "image": "images/accesorios/anillo_gokublack.jpg"
     }
 ]

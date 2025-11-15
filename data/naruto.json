@@ -2,25 +2,25 @@
     { 
         "id": 601, 
         "name": "PELUCHE DE NARUTO SAGE MODE", 
-        "price": 50.00, 
+        "price": 30.00, 
         "image": "images/peluches/peluche_de_naruto.jpg" 
     },
     { 
         "id": 602, 
         "name": "MANGA TOMO 09", 
-        "price": 50.00, 
+        "price": 40.00, 
         "image": "images/manga/tomo_9_de_naruto.jpg" 
     },
     { 
         "id": 603, 
         "name": "FIGURA DE ACCIÓN NARUTO SHIPPUDEN", 
-        "price": 50.00, 
+        "price": 70.00, 
         "image": "images/figuras/figura_de_accion_naruto.jpg" 
     },
     { 
         "id": 604, 
         "name": "KUNAI MINATO", 
-        "price": 50.00, 
+        "price": 30.00, 
         "image": "images/accesorios/kunai_naruto.jpg" 
     }
 ]

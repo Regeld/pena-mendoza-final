@@ -14,13 +14,13 @@
     { 
         "id": 1003, 
         "name": "FIGURA DE ACCIÓN TANJIRO", 
-        "price": 50.00, 
+        "price": 120.00, 
         "image": "images/figuras/figura_vde_accion_de_kimestu_no_yaiba.jpg" 
     },
     { 
         "id": 1004, 
         "name": "MÁSCARA DE ZORRO (SABITO)", 
-        "price": 50.00, 
+        "price": 40.00, 
         "image": "images/accesorios/maasacr_d_ekmestu_o_yaib.jpg" 
     }
 ]
