@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "MANGA TOMO 05 - NOBLEZA DE LAS FLORES",
+        "price": 50.00,
+        "image": "images/novedades/Nobleza_de_las_flores.jpg"
+    },
+    {
+        "id": 2,
+        "name": "MANGA TOMO 03 - DAN DA DA",
+        "price": 50.00,
+        "image": "images/novedades/manga_dan_da_da.jpg"
+    },
+    {
+        "id": 3,
+        "name": "FIGURA KILLUA A ESCALA 1/4 NUEVA COLECCIÓN DE HXH",
+        "price": 50.00,
+        "image": "images/novedades/figura killua.jpg"
+    },
+    {
+        "id": 4,
+        "name": "ARETES POTARA DRAGON BALL",
+        "price": 50.00,
+        "image": "images/novedades/aretes potara.jpg"
+    }
+]

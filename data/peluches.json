@@ -1,0 +1,26 @@
+[
+    {
+        "id": 301,
+        "name": "PELUCHE NAGI - BLUE LOCK",
+        "price": 50.00,
+        "image": "images/peluches/nagi_blue_lock.jpg"
+    },
+    {
+        "id": 302,
+        "name": "PELUCHE UMARU - HIMOUTO! UMARU-CHAN",
+        "price": 50.00,
+        "image": "images/peluches/umaru_chan.jpg"
+    },
+    {
+        "id": 303,
+        "name": "PELUCHE ANYA - SPY X FAMILY",
+        "price": 50.00,
+        "image": "images/peluches/anya_spyxfamily.jpg"
+    },
+    {
+        "id": 304,
+        "name": "PELUCHE POCHITA - CHAINSAWMAN",
+        "price": 50.00,
+        "image": "images/peluches/pochita_csm.jpg"
+    }
+]

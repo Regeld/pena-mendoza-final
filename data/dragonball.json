@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 701, 
+        "name": "PELUCHE SHEN LONG", 
+        "price": 50.00, 
+        "image": "images/peluches/pleuche_dragon_ball.jpg" 
+    },
+    { 
+        "id": 702, 
+        "name": "MANGA TOMO 21", 
+        "price": 50.00, 
+        "image": "images/manga/tomo_de_dragioon_ball_21.jpg" 
+    },
+    { 
+        "id": 703, 
+        "name": "FIGURA DE ACCIÓN GOKU ULTRA INSTINTO", 
+        "price": 50.00, 
+        "image": "images/figuras/figura_de_accion_de_goku.jpg" 
+    },
+    { 
+        "id": 704, 
+        "name": "ESFERA DE DRAGÓN DE 4 ESTRELLAS", 
+        "price": 50.00, 
+        "image": "images/accesorios/esfera.jpg" 
+    }
+]

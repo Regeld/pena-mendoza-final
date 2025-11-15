@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 901, 
+        "name": "PELUCHE KON", 
+        "price": 50.00, 
+        "image": "images/peluches/peluche_bleach.jpg" 
+    },
+    { 
+        "id": 902, 
+        "name": "MANGA TOMO 19", 
+        "price": 50.00, 
+        "image": "images/manga/tomo_19_de_belach.jpg" 
+    },
+    { 
+        "id": 903, 
+        "name": "FIGURA DE ACCIÓN ICHIGO TCG", 
+        "price": 50.00, 
+        "image": "images/figuras/figura_de_accion_de_bleach.jpg" 
+    },
+    { 
+        "id": 904, 
+        "name": "COLLAR SELLO DE SEGADOR DE ALMAS", 
+        "price": 50.00, 
+        "image": "images/accesorios/collar_bleach.jpg" 
+    }
+]

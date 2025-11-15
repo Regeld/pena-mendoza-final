@@ -1,0 +1,29 @@
+/* styles/main.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Fondo oscuro principal de Shōnen Jump */
+    padding-top: 72px; /* Espacio para el header fijo */
+}
+
+/* Configuraciones de grid para responsividad (basado en tus media queries) */
+.product-grid {
+    display: grid;
+    /* 2 columnas en móvil */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem; /* gap-6 en Tailwind */
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        /* 4 columnas en desktop */
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+/* Estilos para el estado activo del menú (adaptado al rojo de Shonen Jump) */
+.active {
+    border-bottom: 2px solid #cc0000;
+    color: #cc0000;
+    font-weight: 600;
+}

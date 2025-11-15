@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 1001, 
+        "name": "PELUCHE SHINOBU KOCHO", 
+        "price": 50.00, 
+        "image": "images/peluches/pleuche_de_kimestu_no_yaiba.jpg" 
+    },
+    { 
+        "id": 1002, 
+        "name": "MANGA TOMO 10", 
+        "price": 50.00, 
+        "image": "images/manga/tomo_10_de_kimestui_no_yaiba.JPG" 
+    },
+    { 
+        "id": 1003, 
+        "name": "FIGURA DE ACCIÓN TANJIRO", 
+        "price": 50.00, 
+        "image": "images/figuras/figura_vde_accion_de_kimestu_no_yaiba.jpg" 
+    },
+    { 
+        "id": 1004, 
+        "name": "MÁSCARA DE ZORRO (SABITO)", 
+        "price": 50.00, 
+        "image": "images/accesorios/maasacr_d_ekmestu_o_yaib.jpg" 
+    }
+]

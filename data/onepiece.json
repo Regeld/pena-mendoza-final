@@ -1,0 +1,26 @@
+[
+    {
+        "id": 501, 
+        "name": "PELUCHE YAMATO", 
+        "price": 50.00, 
+        "image": "images/peluches/yamato_onepiece.jpg" 
+    },
+    { 
+        "id": 502, 
+        "name": "MANGA TOMO 01", 
+        "price": 50.00, 
+        "image": "images/manga/one_piece_tomo_1.jpg" 
+    },
+    { 
+        "id": 503, 
+        "name": "BARCO GOING MERRY - BANDAI 2021", 
+        "price": 50.00, 
+        "image": "images/figuras/barco_going_merry.jpg" 
+    },
+    { 
+        "id": 504, 
+        "name": "SOMBRERO ACE", 
+        "price": 50.00, 
+        "image": "images/accesorios/sombrero_ace.jpg" 
+    }
+]

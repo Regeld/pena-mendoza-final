@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shōnen Jump - Tienda Online de Anime</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            // Esto es CRUCIAL: Le dice a Tailwind que busque la clase 'dark' en el HTML
+            darkMode: 'class', 
+            
+            theme: {
+                extend: {
+                    colors: {
+                        'sj-red': '#cc0000',
+                        'sj-yellow': '#f8c000',
+                        'sj-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script type="text/babel" src="scripts/components/AccesoriosSection.js"></script>
+    <script type="text/babel" src="scripts/components/PelucheSection.js"></script>
+    <script type="text/babel" src="scripts/components/FiguraAccionSection.js"></script>
+    <script type="text/babel" src="scripts/components/MangaSection.js"></script>
+    <script type="text/babel" src="scripts/components/NovedadesSection.js"></script>
+    <script type="text/babel" src="scripts/components/OnePieceSection.js"></script>
+    <script type="text/babel" src="scripts/components/NarutoSection.js"></script>
+    <script type="text/babel" src="scripts/components/DragonBallSection.js"></script>
+    <script type="text/babel" src="scripts/components/PokemonSection.js"></script>
+    <script type="text/babel" src="scripts/components/BleachSection.js"></script>
+    <script type="text/babel" src="scripts/components/KimetsuNoVaibaSection.js"></script>
+    <script type="text/babel" src="scripts/components/FranquiciaSection.js"></script>
+    <script type="text/babel" src="scripts/components/ProductosSection.js"></script>
+    <script type="text/babel" src="scripts/components/JuegoSection.js"></script>
+    <script type="text/babel" src="scripts/components/ContactoSection.js"></script>
+    
+    <script type="text/babel" src="scripts/app.js"></script>
+</body>
+</html>

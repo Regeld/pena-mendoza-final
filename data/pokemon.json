@@ -1,0 +1,26 @@
+[
+    { 
+        "id": 801, 
+        "name": "PELUCHE DE PIKACHU", 
+        "price": 50.00, 
+        "image": "images/peluches/peluche_pokemon.jpg" 
+    },
+    { 
+        "id": 802, 
+        "name": "LIBRO POKEDEX - VERSIÓN SUN AND MOON", 
+        "price": 50.00, 
+        "image": "images/manga/libro_de_pokemon.jpg" 
+    },
+    { 
+        "id": 803, 
+        "name": "FIGURA DE ACCIÓN CHARIZARD (SET EVOLUTIVA)", 
+        "price": 50.00, 
+        "image": "images/figuras/figura_de_acioon_pokemon.jpg" 
+    },
+    { 
+        "id": 804, 
+        "name": "POKEBALL (Accesorio)", 
+        "price": 50.00, 
+        "image": "images/accesorios/pokebol.jpg" 
+    }
+]
