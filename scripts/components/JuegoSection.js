@@ -2,9 +2,9 @@
 
 const { useState, useEffect, useRef } = React;
 
-// 🚨 MODIFICADO: Aumentamos el área de juego
-const GAME_WIDTH = 750; 
-const GAME_HEIGHT = 500; 
+// Dimensiones originales (usadas para cálculos internos)
+const GAME_WIDTH = 550;
+const GAME_HEIGHT = 350;
 
 const PLAYER_SIZE = 50; 
 const DRAGON_BALL_SIZE = 40; 
@@ -12,7 +12,7 @@ const MOVEMENT_SPEED = 20;
 
 const generateId = () => Math.random().toString(36).substring(7);
 
-// Genera esferas en posiciones aleatorias (Ajustado a las nuevas dimensiones)
+// Genera esferas en posiciones aleatorias
 const generateDragonBalls = (count) => {
     const balls = [];
     for (let i = 0; i < count; i++) {
@@ -33,7 +33,21 @@ function JuegoSection() {
     const [dragonBalls, setDragonBalls] = useState([]);
     const gameAreaRef = useRef(null);
     
-    // 1. Inicializar y Empezar Juego (Ajustado para centrar al personaje)
+    // Función para mover al jugador
+    const movePlayer = (dx, dy) => {
+        setPlayerPosition(prev => {
+            let newX = prev.x + dx;
+            let newY = prev.y + dy;
+
+            // Limitar al área de juego
+            newX = Math.max(0, Math.min(GAME_WIDTH - PLAYER_SIZE, newX));
+            newY = Math.max(0, Math.min(GAME_HEIGHT - PLAYER_SIZE, newY));
+            
+            return { x: newX, y: newY };
+        });
+    };
+    
+    // 1. Inicializar y Empezar Juego
     const startGame = () => {
         setPlayerPosition({ x: GAME_WIDTH / 2 - PLAYER_SIZE / 2, y: GAME_HEIGHT / 2 - PLAYER_SIZE / 2 }); 
         setDragonBalls(generateDragonBalls(5));
@@ -47,26 +61,20 @@ function JuegoSection() {
         if (gameState !== 'playing') return;
         
         const handleKeyDown = (e) => {
-            setPlayerPosition(prev => {
-                let newX = prev.x;
-                let newY = prev.y;
-                
-                switch (e.key) {
-                    case 'ArrowUp':
-                    case 'w': newY -= MOVEMENT_SPEED; break;
-                    case 'ArrowDown':
-                    case 's': newY += MOVEMENT_SPEED; break;
-                    case 'ArrowLeft':
-                    case 'a': newX -= MOVEMENT_SPEED; break;
-                    case 'ArrowRight':
-                    case 'd': newX += MOVEMENT_SPEED; break;
-                    default: return prev;
-                }
+            let dx = 0;
+            let dy = 0;
 
-                // Limitar al área de juego (usando las nuevas constantes)
-                newX = Math.max(0, Math.min(GAME_WIDTH - PLAYER_SIZE, newX));
-                newY = Math.max(0, Math.min(GAME_HEIGHT - PLAYER_SIZE, newY));
-                
+            switch (e.key) {
+                case 'ArrowUp': case 'w': dy = -MOVEMENT_SPEED; break;
+                case 'ArrowDown': case 's': dy = MOVEMENT_SPEED; break;
+                case 'ArrowLeft': case 'a': dx = -MOVEMENT_SPEED; break;
+                case 'ArrowRight': case 'd': dx = MOVEMENT_SPEED; break;
+                default: return;
+            }
+            // Mueve el jugador directamente
+            setPlayerPosition(prev => {
+                let newX = Math.max(0, Math.min(GAME_WIDTH - PLAYER_SIZE, prev.x + dx));
+                let newY = Math.max(0, Math.min(GAME_HEIGHT - PLAYER_SIZE, prev.y + dy));
                 return { x: newX, y: newY };
             });
         };
@@ -75,7 +83,7 @@ function JuegoSection() {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [gameState]);
     
-    // 3. Game Loop: Colisiones y Temporizador (Lógica sin cambios)
+    // 3. Game Loop: Colisiones y Temporizador
     useEffect(() => {
         let timer;
         let loop;
@@ -100,7 +108,7 @@ function JuegoSection() {
         };
     }, [gameState, countdown, playerPosition]);
     
-    // 4. Lógica de Colisión (Lógica sin cambios)
+    // 4. Lógica de Colisión
     const checkCollisions = () => {
         setDragonBalls(prevBalls => {
             const newBalls = prevBalls.filter(ball => {
@@ -126,9 +134,9 @@ function JuegoSection() {
         });
     };
     
-    // 5. Renderizado del Contenido (Ajustado para centrado visual)
+    // 5. Renderizado del Contenido
     const renderGameContent = () => {
-        // ... (renderizado del menú y finished - sin cambios funcionales) ...
+        // ... (Menú y pantalla de fin - sin cambios) ...
         if (gameState === 'menu') {
             return (
                 <div className="flex flex-col items-center justify-center h-full text-center">
@@ -157,7 +165,27 @@ function JuegoSection() {
 
         // Estado 'playing'
         return (
-            <div className="relative w-full h-full">
+            // 🚨 NUEVA INTERACCIÓN: Click para mover
+            <div 
+                className="relative w-full h-full"
+                onClick={(e) => {
+                    if (gameState === 'playing' && gameAreaRef.current) {
+                        const rect = gameAreaRef.current.getBoundingClientRect();
+                        // Ajuste de las coordenadas del clic al sistema de coordenadas del juego (0-550, 0-350)
+                        const scaleX = GAME_WIDTH / rect.width;
+                        const scaleY = GAME_HEIGHT / rect.height;
+
+                        const clickX = (e.clientX - rect.left) * scaleX;
+                        const clickY = (e.clientY - rect.top) * scaleY;
+                        
+                        // Mueve el personaje al punto de clic
+                        setPlayerPosition({ 
+                            x: Math.max(0, Math.min(GAME_WIDTH - PLAYER_SIZE, clickX - PLAYER_SIZE / 2)),
+                            y: Math.max(0, Math.min(GAME_HEIGHT - PLAYER_SIZE, clickY - PLAYER_SIZE / 2)) 
+                        });
+                    }
+                }}
+            >
                 {/* 5a. Renderizado del Jugador (Goku con Imagen) */}
                 <div 
                     className="absolute rounded-full flex items-center justify-center"
@@ -178,7 +206,7 @@ function JuegoSection() {
                 {dragonBalls.map(ball => (
                     <div
                         key={ball.id}
-                        className="absolute animate-pulse"
+                        className="absolute animate-pulse" 
                         style={{
                             left: `${ball.x}px`,
                             top: `${ball.y}px`,
@@ -198,16 +226,16 @@ function JuegoSection() {
 
     return (
         <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-5 md:px-16 py-10 min-h-[70vh]">
-            <h2 className="text-3xl font-normal mb-8 uppercase dark:text-white">DRAGON BALL Z</h2>
+            <h2 className="text-3xl font-normal mb-8 uppercase dark:text-white">GAME: CAPTURA Z</h2>
             
             <div className="flex flex-col md:flex-row gap-10">
                 
-                {/* Columna Izquierda: Área de Juego (Ahora más grande) */}
+                {/* Columna Izquierda: Área de Juego (Optimizado para Mobile/Desktop) */}
                 <div 
-                    ref={gameAreaRef}
+                    ref={gameAreaRef} // 🚨 AÑADIDO EL REF AQUÍ
                     className="w-full md:w-2/3 bg-gray-200 dark:bg-gray-700 relative rounded-md overflow-hidden shadow-2xl"
-                    // 🚨 TAMAÑO APLICADO AQUI 🚨
-                    style={{ width: `${GAME_WIDTH}px`, height: `${GAME_HEIGHT}px`, margin: '0 auto' }}
+                    // 🚨 TAMAÑO: Usamos un tamaño fijo para los cálculos internos, pero permitimos que se escale en móvil con w-full
+                    style={{ maxWidth: `${GAME_WIDTH}px`, height: `${GAME_HEIGHT}px`, margin: '0 auto' }}
                 >
                     {renderGameContent()}
                 </div>

@@ -44,17 +44,81 @@ const Header = ({ navigate, cartItemCount, toggleCart, darkMode, toggleDarkMode,
     </header>
 );
 
-const Footer = () => ( 
-    <footer className="bg-sj-dark text-gray-400 mt-10 pt-10"> 
+// scripts/app.js (Reemplazar la definición de Footer con este código)
+
+const Footer = () => (
+    <footer className="bg-sj-dark text-gray-400 pt-10"> 
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pb-6">
-                <div><h3 className="text-xl font-extrabold uppercase text-white dark:text-white mb-4">SHŌNEN JUMP</h3> <div className="flex items-center mb-4"><i className="fas fa-fire text-5xl text-sj-yellow mr-2"></i></div><h4 className="text-lg font-bold text-white mb-2 uppercase">NOSOTROS</h4><p className="text-sm">La mejor tienda para tener a tus animes favoritos no solo en tu corazón sino de manera física</p></div>
-                <div><h4 className="text-xl font-bold text-white mb-4 uppercase">CONTACTO</h4><ul className="space-y-3 text-sm"><li className="flex items-start space-x-2"><i className="fas fa-location-dot mt-1 text-sj-red"></i><span>Av. Gral. Juan Antonio Álvarez de Arenales 1737, Lince 15046</span></li><li className="flex items-start space-x-2"><i className="fas fa-phone text-sj-red"></i><span>+51 921 083 007</span></li><li className="flex items-start space-x-2"><i className="fas fa-envelope text-sj-red"></i><span>shōnenjump@gmail.com</span></li></ul></div>
-                <div className="md:col-span-2"><h4 className="text-xl font-bold text-white mb-4 uppercase">SÍGUENOS</h4><div className="flex space-x-4 text-2xl mb-4"><a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-twitter"></i></a><a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-facebook-f"></i></a><a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-instagram"></i></a><a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i class="fab fa-tiktok"></i></a></div><p className="text-sm mb-2">Suscribite a nuestro newsletter</p><div className="flex w-full max-w-xs"><input type="email" placeholder="Tu email" className="px-3 py-2 rounded-l text-gray-800 w-full text-sm"/><button className="bg-sj-red px-4 py-2 rounded-r hover:bg-[#a01010]"><i class="fas fa-paper-plane text-white"></i></button></div></div>
+            
+            {/* 🚨 REORGANIZACIÓN COMPLETA DE LAS CUATRO COLUMNAS 🚨 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 pb-6">
+                
+                {/* COLUMNA 1: SHŌNEN JUMP (Logo con Título) */}
+                <div className="mb-6 lg:mb-0">
+                    <div className="flex items-center mb-4">
+                        <img 
+                            src="images/shonen_jump_skull.png" 
+                            alt="Logo Shōnen Jump" 
+                            className="w-16 h-16 mr-3" // Tamaño y espacio para el logo
+                        />
+                        <h3 className="text-2xl font-extrabold uppercase text-white">SHŌNEN JUMP</h3> 
+                    </div>
+                </div>
+                
+                {/* COLUMNA 2: NOSOTROS (Texto Descriptivo) */}
+                <div className="mb-6 lg:mb-0">
+                    <h4 className="text-xl font-bold text-white mb-4 uppercase">NOSOTROS</h4>
+                    <p className="text-sm">La mejor tienda para tener a tus animes favoritos no solo en tu corazón sino de manera física</p>
+                </div>
+
+                {/* COLUMNA 3: CONTACTO */}
+                <div className="mb-6 lg:mb-0">
+                    <h4 className="text-xl font-bold text-white mb-4 uppercase">CONTACTO</h4>
+                    <ul className="space-y-3 text-sm">
+                        <li className="flex items-start space-x-2">
+                            <i className="fas fa-location-dot mt-1 text-sj-red"></i>
+                            <span>Av. Gral. Juan Antonio Álvarez de Arenales 1737, Lince 15046</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                            <i className="fas fa-phone text-sj-red"></i>
+                            <span>+51 921 083 007</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                            <i className="fas fa-envelope text-sj-red"></i>
+                            <span>shōnenjump@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* COLUMNA 4: SÍGUENOS Y NEWSLETTER */}
+                <div>
+                    <h4 className="text-xl font-bold text-white mb-4 uppercase">SÍGUENOS</h4>
+                    <div className="flex space-x-4 text-2xl mb-4">
+                        <a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-twitter"></i></a>
+                        <a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-facebook-f"></i></a>
+                        <a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-instagram"></i></a>
+                        <a href="#" className="hover:text-sj-yellow transition duration-300 text-white"><i className="fab fa-tiktok"></i></a>
+                    </div>
+                    <p className="text-sm mb-2">Suscribite a nuestro newsletter</p>
+                    <div className="flex w-full max-w-xs">
+                        <input type="email" placeholder="Tu email" className="px-3 py-2 rounded-l text-gray-800 w-full text-sm"/>
+                        <button className="bg-sj-red px-4 py-2 rounded-r hover:bg-[#a01010]">
+                            <i className="fas fa-paper-plane text-white"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div className="pt-4 mt-8 text-center text-xs border-t border-gray-700"><p className="text-gray-400">&copy; 2025 Shōnen Jump. Todos los derechos reservados</p></div>
+            
+            {/* LÍNEA DIVISORIA Y COPYRIGHT CENTRADO */}
+            <div className="pt-4 mt-8 text-center text-xs border-t border-gray-700">
+                <p className="text-gray-400">&copy; 2025 Shōnen Jump. Todos los derechos reservados</p>
+            </div>
         </div>
-        <div className="bg-sj-red py-3 text-center text-xs text-white">SHŌNEN JUMP</div>
+
+        {/* BARRA ROJA INFERIOR */}
+        <div className="bg-sj-red py-3 text-center text-xs text-white">
+            SHŌNEN JUMP
+        </div>
     </footer>
 );
 
